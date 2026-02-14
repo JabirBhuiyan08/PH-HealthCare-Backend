@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { catchAsync } from "../../shared/catchAsync";
 import { sendResponse } from "../../shared/sendResponse";
 import { SpecialtyService } from "./specialty.service";
+import status from "http-status";
 
 
 
@@ -12,9 +13,9 @@ const createSpecialty = catchAsync(
         const payload = req.body;
         const result = await SpecialtyService.createSpecialty(payload);
         sendResponse(res,{
-            httpStatusCode: 201,
+            httpStatusCode: status.OK,
             success: true,
-            message: "Specialty creted Successfully",
+            message: "Specialty created Successfully",
             data: result
         })
     }

@@ -1,4 +1,4 @@
-model Appoinment {
+model Appointment {
     id String @id @default(uuid(7))
     videoCallingId String
     status AppointmentStatus @default(SCHEDULED)
@@ -23,7 +23,5 @@ model Appoinment {
     @@index([doctorId])
     @@index([scheduleId])
 
-    
-
-
+    @@map("appoinments")
     }
